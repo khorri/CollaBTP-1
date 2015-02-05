@@ -1,7 +1,21 @@
 <tabset> <tab> <tab-heading> <i class="fa fa-cube"></i> Projet </tab-heading>
 	<div class="box border no-top">
 		<div class="box-body">
-			<h1>Détail de projet</h1>
+			<h1>Nom de projet</h1>
+            <div class="actions-btn">
+                <button ng-click="openAddDialog()" class="btn btn-success">
+                    <i class="fa fa-plus"></i> Términer
+                </button>
+                <button ng-click="refreshData()" class="btn btn btn-default">
+                    <i class="fa fa-edit"></i> Modifier
+                </button>
+                <button type="button" class="btn btn-default">
+                    <i class="fa fa-money" > Budget: <strong>{{ project.budget }}</strong></i>
+                </button>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Calenda</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Timetracker</button>
+            <button type="button" class="btn btn-primary btn-lg btn-block">Activity</button>   
 		</div>
 	</div>
 	</tab> <tab> <tab-heading> <i class="fa fa-tasks"></i> Tâches</tab-heading>
