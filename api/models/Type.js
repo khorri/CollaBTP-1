@@ -9,11 +9,11 @@ module.exports = {
   schema: true,
   attributes: {
     name: {
-        type: 'text',
+        type: 'string',
         required: true
     },
     description: {
-        type: 'text',
+        type: 'string'
     }
   }
 };

@@ -12,13 +12,29 @@ module.exports = {
       type: 'string',
       required: true
     },
-    done: {
-      type: 'boolean',
-      required: true
+    description: {
+      type: 'string'
     },
-    owner:{
-      model: 'project'
-    }
+    starts: {
+		type: 'date',
+		defaultsTo: new Date()
+	},
+	ends: {
+        type: 'date'
+	},
+    status: {
+        type: 'string',
+        required: true,
+        defaultsTo: 'new',
+        enum: ['new', 'affected', 'on hold', 'done']
+    },
+    project:{
+        model: 'Project'
+    },  
+    tasklist:{
+        model: 'Tasklist'
+    }   
+       
   }
 };
 

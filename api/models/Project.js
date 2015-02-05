@@ -22,7 +22,7 @@ module.exports = {
     },
     status: {
       type: 'string',
-      defaultsTo: ''
+      defaultsTo: 'new'
     },
 	budget: {
 		type: 'float',
@@ -35,14 +35,22 @@ module.exports = {
 	ends: {
 	  type: 'date'
 	},
-    tasks:{
-      collection: 'task',
-      via: 'owner'
+    tasks: {
+      collection: 'Task',
+      via: 'project'
     },
-	owner:{
+	owner: {
 	  model: 'User'
   	},
-	isDeleted:{
+    customer: {
+	  model: 'Customer'
+  	},
+    participants: {
+	  collection: 'Participant',
+      via: 'projects',
+      dominant: true    
+  	},  
+	isDeleted: {
 		type:'boolean',
 		defaultsTo: false
 	}

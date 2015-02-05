@@ -9,9 +9,13 @@ module.exports = {
   schema: true,
   attributes: {
     title: {
-        type: 'text',
+        type: 'string',
         required: true
-    }
+    },
+    users: {
+        collection: 'User',
+        via: 'role'
+    },  
   }
 };
 

@@ -22,6 +22,9 @@ module.exports = {
 		  required: true,
 		  unique: true		  
 	  },
+      role: {
+          model: 'Role',
+      },
 	  bio: {
 		  type: 'text'
 	  },
