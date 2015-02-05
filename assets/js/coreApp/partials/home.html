@@ -24,6 +24,7 @@
 							<th>Référence</th>
 							<th>Nom de projet</th>
 							<th>Budget</th>
+							<th>Description</th> <!-- collapsible -->
 							<th>Deadline</th>
 							<th></th>
 						</tr>
@@ -33,6 +34,7 @@
 							<td>{{ project.ref }}</td>
 							<td>{{ project.name }}</td>
 							<td>{{ project.budget }}</td>
+							<td>{{ project.desc }}</td>
 							<td>
 								<span ng-if="project.ends" am-time-ago="project.ends"></span>
 								<span class="label label-warning" ng-if="!project.ends">Non defini</span>

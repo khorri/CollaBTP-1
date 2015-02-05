@@ -17,7 +17,7 @@ module.exports = {
       type: 'string',
       required: true
     },
-    description: {
+    desc: {
       type: 'text'
     },
     status: {

@@ -93,8 +93,9 @@ app.controller('homeCtrl', ['$scope', '$compile', 'navService', 'DTOptionsBuilde
 		DTColumnDefBuilder.newColumnDef(0),
 		DTColumnDefBuilder.newColumnDef(1),
 		DTColumnDefBuilder.newColumnDef(2),
-		DTColumnDefBuilder.newColumnDef(3).notSortable(),
+		DTColumnDefBuilder.newColumnDef(3).withClass('none'),
 		DTColumnDefBuilder.newColumnDef(4).notSortable(),
+		DTColumnDefBuilder.newColumnDef(5).notSortable(),
 	];
 	
 	$resource('/project/getAll').query().$promise.then(function(projects) {

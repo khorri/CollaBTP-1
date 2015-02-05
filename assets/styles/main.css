@@ -1073,6 +1073,16 @@ table.dataTable.dtr-inline.collapsed tbody td:first-child:before, table.dataTabl
 	content: 'v';
 	background-color: #5B3777;
 }
+
+table.dataTable.dtr-inline.collapsed tbody .dataTables_empty:first-child:before {
+	display: none;
+}
+
+table.dataTable tr.child ul {
+	float: left;
+	margin-left: 100px;
+}
+
 /* ANNIMATON STYLING*/
 
 .ng-enter{
