@@ -1031,14 +1031,11 @@ div.dataTables_filter input {
 
 thead tr{
     background-color: #5B3777;
-<<<<<<< Updated upstream
     color: #fff  
 }
 
 .ngdialog-message h2{
-	color: #5b3777;
-=======
-    color: #fff    
+	color: #5b3777;  
 }
 
 .tab-pane h1 {
@@ -1047,7 +1044,6 @@ thead tr{
     color: #959396;
     padding-bottom: 15px;
     font-size: 26px;
->>>>>>> Stashed changes
 }
 
 /* ANNIMATON STYLING*/
