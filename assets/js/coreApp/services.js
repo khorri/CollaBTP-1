@@ -3,6 +3,8 @@ app.factory('navService', ['$http', function($http){
 }]);
 
 
+//USER SERVICE
+
 app.factory('userService', ['$http', '$sails',function($http, $sails){
 	var o = {
 			users: [],
@@ -61,6 +63,9 @@ app.factory('todosService', ['$http', function($http){
 
 }]);
 
+
+
+//PROJECT SERVICE
 app.factory('projectService', ['$http', function($http){
 	var o = {
 			projects: [],
@@ -92,9 +97,10 @@ app.factory('projectService', ['$http', function($http){
         })};
 
 				
-	o.remove = function(project) {
-        return $http.post('', {projectID: project.id}).success(function(data){
-            o.projects.splice(o.projects.indexOf(project), 1);
+	o.remove = function(project, callback) {
+        return $http.post('/project/remove', {projectID: project.id}).success(function(data){
+			console.log(data);
+			callback();
         }).error(function (data, status, headers, config) {
             console.log(status)
         })};	

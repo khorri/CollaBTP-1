@@ -262,7 +262,7 @@ body{
 	position: fixed;
     border-radius: 0;
 	margin-bottom: 0;
-	z-index: 1;
+	z-index: 2;
 }
 
 
@@ -1031,8 +1031,11 @@ div.dataTables_filter input {
 
 thead tr{
     background-color: #5B3777;
-    color: #fff
-    
+    color: #fff  
+}
+
+.ngdialog-message h2{
+	color: #5b3777;
 }
 
 /* ANNIMATON STYLING*/

@@ -61,16 +61,27 @@ app.controller('coreCtrl', ['$scope', 'navService', '$sails', 'notificationServi
 	
 
 	$sails.on('disconnect', function(){
-		alert('disconnect');
+		notificationService.notify({
+			title: 'Deconnection',
+			text: 'La connection avec le serveur a été perdu',
+			icon: 'fa fa-power-off',
+			type: 'error',
+			hide: false
+		});
 	});
 
 }]);
 
-app.controller('homeCtrl', ['$scope', '$compile', 'navService', 'DTOptionsBuilder', 'DTColumnDefBuilder', 'ngDialog', '$resource', 'projectService', function($scope, $compile, navService, DTOptionsBuilder, DTColumnDefBuilder, ngDialog, $resource, projectService) {
+
+// DASHBOARD CONTROLLER
+
+app.controller('homeCtrl', ['$scope', '$compile', 'navService', 'DTOptionsBuilder', 'DTColumnDefBuilder', 'ngDialog', '$resource', 'projectService', 'notificationService', function($scope, $compile, navService, DTOptionsBuilder, DTColumnDefBuilder, ngDialog, $resource, projectService, notificationService) {
 	
 	//variable du projet à ajouter
 	$scope.project = {};
 	$scope.projects= [];
+	$scope.model = {};
+	$scope.projectToDel ={};
 
 	$scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(10);
 
@@ -78,7 +89,8 @@ app.controller('homeCtrl', ['$scope', '$compile', 'navService', 'DTOptionsBuilde
 		DTColumnDefBuilder.newColumnDef(0),
 		DTColumnDefBuilder.newColumnDef(1),
 		DTColumnDefBuilder.newColumnDef(2),
-		DTColumnDefBuilder.newColumnDef(3)
+		DTColumnDefBuilder.newColumnDef(3).notSortable(),
+		DTColumnDefBuilder.newColumnDef(4).notSortable(),
 	];
 	
 	$resource('/project/getAll').query().$promise.then(function(projects) {
@@ -86,7 +98,8 @@ app.controller('homeCtrl', ['$scope', '$compile', 'navService', 'DTOptionsBuilde
 	});
 	
 
-	//fonction d'ouverture du modal d'ajout de projet
+	//Ajout de Projet
+	
 	$scope.openAddDialog = function(){
 		$scope.project = {};
 		ngDialog.open({
@@ -110,6 +123,38 @@ app.controller('homeCtrl', ['$scope', '$compile', 'navService', 'DTOptionsBuilde
 		});
 		$scope.closeModal();
 	}
+	
+	//Supression de Projet
+	
+	$scope.openDeleteDialog = function(project){
+		$scope.projectToDel = project;
+		ngDialog.open({
+			template: 'delProjectModal',
+			scope: $scope,
+			showClose: true,
+			closeByDocument: true,
+			closeByEscape: true,
+			className: 'ngdialog-theme-flat ngdialog-small'
+		});
+	}
+	
+	$scope.deleteProject = function(){
+		projectService.remove($scope.projectToDel, function(){
+			$scope.refreshData();
+			notificationService.notify({
+				title: 'Supression',
+				text: 'Le projet "'+$scope.projectToDel.name+'" a été supprimé avec succes',
+				icon: 'fa fa-check',
+				type: 'success',
+				animate_speed: 'fast'
+			});
+		})
+		$scope.closeModal();
+		
+	}
+	
+	
+	//actualisation des donnés du tableau
 	
 	$scope.refreshData = function(){
 		projectService.getAll(function(){
@@ -137,6 +182,7 @@ app.controller('adminCtrl', ['$scope', 'todosService', 'navService', function($s
 
 }]);
 
+// PROFIL CONTROLLER
 
 app.controller('profilCtrl', ['$scope', 'navService', '$sails', 'userService', function($scope, navService, $sails, userService){
 
@@ -144,6 +190,7 @@ app.controller('profilCtrl', ['$scope', 'navService', '$sails', 'userService', f
 
 }]);
 
+// PROJECT CONTROLLER
 
 app.controller('projectCtrl', ['$scope', 'navService', '$sails', 'userService', 'projectService', '$routeParams', function($scope, navService, $sails, userService, projectService, $routeParams){
 

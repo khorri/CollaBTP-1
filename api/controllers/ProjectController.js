@@ -17,14 +17,23 @@ module.exports = {
     },
 
 	getAll: function(req, res){
-		Project.find().exec(function(err, result){
+		Project.find().where({'isDeleted':false}).exec(function(err, result){
 			if (err){
 				res.send(500, {error: err});
 			}else{
 				res.json(result);
 			}
 		});
-
+	},
+	
+	remove: function(req, res){
+		Project.update({id:req.param('projectID')}, {'isDeleted': true}).exec(function(err, result){
+			if (err){
+				res.send(500, {error: err});
+			}else{
+				res.json(result);
+			}
+		});
 	},
 };
 

@@ -5,7 +5,7 @@ app.constant('angularMomentConfig', {
     timezone: 'Africa/Casablanca' // optional
 });
 
-app.config(['notificationServiceProvider', function(notificationServiceProvider) {
+app.config(['notificationServiceProvider', 'uiSelectConfig', function(notificationServiceProvider, uiSelectConfig) {
 	notificationServiceProvider.setDefaults({
 		history: false,
 		delay: 3000,
@@ -13,4 +13,7 @@ app.config(['notificationServiceProvider', function(notificationServiceProvider)
 		closer_hover: false,
 		animate_speed: 'fast'
 	});
+	
+	uiSelectConfig.theme = 'bootstrap';
+	uiSelectConfig.resetSearchInput = true;
 }]);

@@ -15,15 +15,17 @@
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-    'styles/bootstrap.min.css',
-    'styles/font-awesome.min.css',
+	'styles/bootstrap.min.css',
+	'styles/font-awesome.min.css',
 	'styles/animate.css',
 	'styles/pnotify.custom.css',
 	'styles/ngDialog.css',
 	'styles/ngDialog-theme-flat.css',
 	'styles/jquery.dataTables.css',
 	'styles/dataTables.bootstrap.css',
+	'styles/select.css',
     'styles/main.css',
+	
 	
 ];
 
@@ -33,12 +35,15 @@ var cssFilesToInject = [
 var jsFilesToInject = [
   // Load sails.io before everything else	
 	'js/dependencies/sails.io.js',
+	// Dependencies like jQuery, or Angular are brought in here
 	'js/dependencies/jquery.js',
 	'js/dependencies/jquery.dataTables.js',
 	'js/dependencies/bootstrap.min.js',	
 	'js/dependencies/angular.js',
 	'js/dependencies/angular-sails.js',	
 	'js/dependencies/angular-route.js',
+	'js/dependencies/select.js',
+	'js/dependencies/angular-sanitize.js',
 	'js/dependencies/angular-resource.js',
 	'js/dependencies/angular-filter.js',
 	'js/dependencies/angular-ui.js',  	
@@ -50,7 +55,7 @@ var jsFilesToInject = [
 	'js/dependencies/ngDialog.js',
 	'js/dependencies/angular-datatables.js',
 	
-  // Dependencies like jQuery, or Angular are brought in here
+
 	'js/coreApp/**/*.js'	
 
   // All of the rest of your client-side js files
