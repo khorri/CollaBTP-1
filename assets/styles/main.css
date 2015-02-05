@@ -1050,6 +1050,9 @@ table {
     border: 1px solid #5B3777;
 }
 
+.actions-btn  {
+    margin-bottom: 30px;
+}
 /* ANNIMATON STYLING*/
 
 .ng-enter{
