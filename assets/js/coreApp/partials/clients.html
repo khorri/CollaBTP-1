@@ -1,1 +1,42 @@
-<h1>Work in progress...</h1>
+<tabset> <tab> <tab-heading> <i class="fa fa-suitcase"></i> Clients </tab-heading>
+	<div class="box border no-top">
+		<div class="box-body">
+                    <button ng-click="openAddDialog()" class="btn btn btn-primary">
+                        <i class="fa fa-plus"></i> Ajouter un client
+                    </button>
+                    <button ng-click="refreshData()" class="btn btn btn-default">
+                        <i class="fa fa-refresh"></i> Recharger les données
+                    </button>
+                    <button ng-click="refreshData()" class="btn btn btn-danger">
+                        <i class="fa fa-times"></i> Supprimer la selection
+                    </button>
+                
+                <table datatable="ng" dt-options="dtOptionsVisitesChantier" dt-column-defs="dtColumnDefs" class="row-border hover table-striped">
+					<thead>
+						<tr>
+							<th>Client</th>
+							<th>Téléphone</th>
+							<th>E-mail</th>
+                            <th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="project in projects track by $index">
+							<td>{{ project.ref }}</td>
+							<td>{{ project.name }}</td>
+							<td>{{ project.budget }}</td>
+							<td>
+								<span ng-if="project.ends" am-time-ago="project.ends"></span>
+								<span ng-if="!project.ends">Non difini</span>
+							</td>
+							<th>
+								<a href="#/project/{{project.id}}" class="show-btn btn btn-default">
+									<i class="fa fa-eye"></i>
+								</a>
+								<button class="show-btn btn btn-danger">
+									<i class="fa fa-trash"></i>
+								</button>		
+							</th>
+						</tr>
+					</tbody>
+				</table>

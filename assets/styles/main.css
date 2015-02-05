@@ -99,11 +99,11 @@ body{
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #fff;
+    color: #d3a7f0;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-	color: #d5acf1;
+	color: #fff;
 }
 
 .navbar-default .navbar-nav>li>a:focus {
@@ -267,7 +267,7 @@ body{
 
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-    color: #d3a7f0;
+    color: #fff;
     background-color: transparent;
 }
 
