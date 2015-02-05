@@ -65,6 +65,10 @@ module.exports.connections = {
 		schema: true
 },
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 //	mongoprod: {
 //		adapter: 'sails-mongo',
 //		url: 'mongodb://cadroctet:final118008@ds063630.mongolab.com:63630/cadroctet_pm_db',

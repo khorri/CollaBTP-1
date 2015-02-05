@@ -120,6 +120,13 @@ app.controller('homeCtrl', ['$scope', '$compile', 'navService', 'DTOptionsBuilde
 	$scope.createProject = function(){
 		projectService.add($scope.project, function(){
 			$scope.refreshData();
+			notificationService.notify({
+				title: 'Projet ajouté',
+				text: 'Le projet "'+$scope.project.name+'" a été ajouté',
+				icon: 'fa fa-plus',
+				type: 'success',
+				animate_speed: 'fast'
+			});
 		});
 		$scope.closeModal();
 	}
@@ -142,9 +149,9 @@ app.controller('homeCtrl', ['$scope', '$compile', 'navService', 'DTOptionsBuilde
 		projectService.remove($scope.projectToDel, function(){
 			$scope.refreshData();
 			notificationService.notify({
-				title: 'Supression',
-				text: 'Le projet "'+$scope.projectToDel.name+'" a été supprimé avec succes',
-				icon: 'fa fa-check',
+				title: 'Projet supprimé',
+				text: 'Le projet "'+$scope.projectToDel.name+'" a été supprimé',
+				icon: 'fa fa-trash',
 				type: 'success',
 				animate_speed: 'fast'
 			});
