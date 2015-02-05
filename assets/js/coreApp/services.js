@@ -65,7 +65,8 @@ app.factory('todosService', ['$http', function($http){
 
 
 
-//PROJECT SERVICE
+/* PROJECT SERVICE */
+
 app.factory('projectService', ['$http', function($http){
 	var o = {
 			projects: [],
@@ -73,7 +74,7 @@ app.factory('projectService', ['$http', function($http){
 	};
 
 	o.getSingle = function(projectID) {
-		return $http.post('', {id:projectID}).success(function(data){
+		return $http.post('/project/getById', {id:projectID}).success(function(data){
 			angular.copy(data, o.single);
 		}).error(function (data, status, headers, config) {
 			console.log(status)
@@ -143,4 +144,55 @@ app.factory('messageService', ['$http', '$sails', function($http, $sails){
         })};
 
     return o;
+}]);
+
+/* DOCEXAMINATION SERVICE */
+
+app.factory('docExaminationService', ['$http', function($http){
+	var o = {
+		docs: [],
+		single:{}
+	};
+
+	o.getSingle = function(doc) {
+		return $http.post('/docexamination/getById', {id:doc.id}).success(function(data){
+			angular.copy(data, o.single);
+		}).error(function (data, status, headers, config) {
+			console.log(status)
+		})};
+	
+	o.getAllByProject = function(callback) {
+		return $http.get('/docexamination/getAllByProject').success(function(data){
+			angular.copy(data, o.docs);
+			callback();
+		}).error(function (data, status, headers, config) {
+			console.log(status)
+		})};
+
+	o.getAll = function(callback) {
+		return $http.get('/docexamination/getAll').success(function(data){
+			angular.copy(data, o.docs);
+			callback();
+		}).error(function (data, status, headers, config) {
+			console.log(status)
+		})};
+
+	o.add = function(doc, callback) {
+		return $http.post('/docexamination/create', doc).success(function(data){
+			angular.copy(data, o.single);
+			console.log(data);
+			callback();
+		}).error(function (data, status, headers, config) {
+			console.log(status)
+		})};
+
+
+	o.remove = function(doc, callback) {
+		return $http.post('/docexamination/remove', {docID: doc.id}).success(function(data){
+			console.log(data);
+			callback();
+		}).error(function (data, status, headers, config) {
+			console.log(status)
+		})};	
+	return o;
 }]);
