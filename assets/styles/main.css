@@ -1046,6 +1046,10 @@ thead tr{
     font-size: 26px;
 }
 
+table {
+    border: 1px solid #5B3777;
+}
+
 /* ANNIMATON STYLING*/
 
 .ng-enter{
