@@ -58,6 +58,17 @@ module.exports.connections = {
   ***************************************************************************/
 
 	 mongodev: {
+<<<<<<< Updated upstream
+=======
+        adapter: 'sails-mongo',
+        host: 'localhost',
+		port: 27017,
+		database: 'cadroctet_pm_db',
+		schema: true
+},
+
+	mongoprod: {
+>>>>>>> Stashed changes
 		adapter: 'sails-mongo',
 		host: 'localhost',
 		port: 27017,

@@ -18,17 +18,99 @@
 			</div>
 		</div>
 	</tab>
-	<tab> <tab-heading> <i class="fa fa-money"></i> facturation</tab-heading>
+	<tab> <tab-heading> <i class="fa fa-money"></i> Facturation</tab-heading>
 		<div class="box border no-top">
 			<div class="box-body">
-				work in progress...
+				<h1>Facturation</h1>
+                    <button ng-click="openAddDialog()" class="btn btn btn-primary">
+                        <i class="fa fa-plus"></i> Ajouter un paiement
+                    </button>
+                    <button ng-click="refreshData()" class="btn btn btn-default">
+                        <i class="fa fa-refresh"></i> Recharger les données
+                    </button>
+                    <button ng-click="refreshData()" class="btn btn btn-danger">
+                        <i class="fa fa-times"></i> Supprimer la selection
+                    </button>
+                
+                <table datatable="ng" dt-options="dtOptionsVisitesChantier" dt-column-defs="dtColumnDefs" class="row-border hover table-striped">
+					<thead>
+						<tr>
+							<th>Valeur</th>
+							<th>Quand</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="project in projects track by $index">
+							<td>{{ project.ref }}</td>
+							<td>{{ project.name }}</td>
+							<td>{{ project.budget }}</td>
+							<td>
+								<span ng-if="project.ends" am-time-ago="project.ends"></span>
+								<span ng-if="!project.ends">Non difini</span>
+							</td>
+							<th>
+								<a href="#/project/{{project.id}}" class="show-btn btn btn-default">
+									<i class="fa fa-eye"></i>
+								</a>
+								<button class="show-btn btn btn-danger">
+									<i class="fa fa-trash"></i>
+								</button>		
+							</th>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</tab>
 	<tab> <tab-heading> <i class="fa fa-file-text"></i> Examination de document</tab-heading>
 		<div class="box border no-top">
 			<div class="box-body">
-				work in progress...
+				<h1>Examination de document</h1>
+                    <button ng-click="openAddDialog()" class="btn btn btn-primary">
+                        <i class="fa fa-plus"></i> Ajouter un document
+                    </button>
+                    <button ng-click="refreshData()" class="btn btn btn-default">
+                        <i class="fa fa-print"></i> Imprimer
+                    </button>
+                    <button ng-click="refreshData()" class="btn btn btn-default">
+                        <i class="fa fa-paper-plane"></i> Envoyer
+                    </button>
+                    <button ng-click="refreshData()" class="btn btn btn-default">
+                        <i class="fa fa-refresh"></i> Recharger les données
+                    </button>
+                    <button ng-click="refreshData()" class="btn btn btn-danger">
+                        <i class="fa fa-times"></i> Supprimer la selection
+                    </button>
+                
+                <table datatable="ng" dt-options="dtOptionsVisitesChantier" dt-column-defs="dtColumnDefs" class="row-border hover table-striped">
+					<thead>
+						<tr>
+							<th>Label</th>
+							<th>Descrition</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="project in projects track by $index">
+							<td>{{ project.ref }}</td>
+							<td>{{ project.name }}</td>
+							<td>{{ project.budget }}</td>
+							<td>
+								<span ng-if="project.ends" am-time-ago="project.ends"></span>
+								<span ng-if="!project.ends">Non difini</span>
+							</td>
+							<th>
+								<a href="#/project/{{project.id}}" class="show-btn btn btn-default">
+									<i class="fa fa-eye"></i>
+								</a>
+								<button class="show-btn btn btn-danger">
+									<i class="fa fa-trash"></i>
+								</button>		
+							</th>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</tab>
@@ -42,7 +124,47 @@
 	<tab> <tab-heading> <i class="fa fa-map-marker"></i> Visites de chantier</tab-heading>
 		<div class="box border no-top">
 			<div class="box-body">
-				work in progress...
+                <h1>Visites de chantier</h1>
+                    <button ng-click="openAddDialog()" class="btn btn btn-primary">
+                        <i class="fa fa-plus"></i> Ajouter une visite
+                    </button>
+                    <button ng-click="refreshData()" class="btn btn btn-default">
+                        <i class="fa fa-refresh"></i> Recharger les données
+                    </button>
+                    <button ng-click="refreshData()" class="btn btn btn-danger">
+                        <i class="fa fa-times"></i> Supprimer la selection
+                    </button>
+                <table datatable="ng" dt-options="dtOptionsVisitesChantier" dt-column-defs="dtColumnDefs" class="row-border hover table-striped">
+					<thead>
+						<tr>
+							<th>Statut</th>
+							<th>Activités</th>
+							<th>Désignation</th>
+							<th>Date</th>
+							<th>Fichiers</th>
+                            <th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="project in projects track by $index">
+							<td>{{ project.ref }}</td>
+							<td>{{ project.name }}</td>
+							<td>{{ project.budget }}</td>
+							<td>
+								<span ng-if="project.ends" am-time-ago="project.ends"></span>
+								<span ng-if="!project.ends">Non difini</span>
+							</td>
+							<th>
+								<a href="#/project/{{project.id}}" class="show-btn btn btn-default">
+									<i class="fa fa-eye"></i>
+								</a>
+								<button class="show-btn btn btn-danger">
+									<i class="fa fa-trash"></i>
+								</button>		
+							</th>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</tab>
