@@ -56,19 +56,19 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
-	mongoprod: {
-		adapter: 'sails-mongo',
-		url: 'mongodb://cadroctet:final118008@ds063630.mongolab.com:63630/cadroctet_pm_db',
-		schema: true ,
-  },
-
-//	 mongodev: {
+//	mongoprod: {
 //		adapter: 'sails-mongo',
-//		host: 'localhost',
-//		port: 27017,
-//		database: 'cadroctet_pm_db',
-//		schema: true
+//		url: 'mongodb://cadroctet:final118008@ds063630.mongolab.com:63630/cadroctet_pm_db',
+//		schema: true ,
 //  },
+
+	 mongodev: {
+		adapter: 'sails-mongo',
+		host: 'localhost',
+		port: 27017,
+		database: 'cadroctet_pm_db',
+		schema: true
+  },
 
 
   /***************************************************************************
