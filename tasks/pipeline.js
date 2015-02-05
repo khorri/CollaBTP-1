@@ -23,6 +23,7 @@ var cssFilesToInject = [
 	'styles/ngDialog-theme-flat.css',
 	'styles/jquery.dataTables.css',
 	'styles/dataTables.bootstrap.css',
+	'styles/dataTables.responsive.css',
 	'styles/select.css',
     'styles/main.css',
 	
@@ -54,6 +55,7 @@ var jsFilesToInject = [
 	'js/dependencies/angular-pnotify.js',
 	'js/dependencies/ngDialog.js',
 	'js/dependencies/angular-datatables.js',
+	'js/dependencies/dataTables.responsive.js',
 	
 
 	'js/coreApp/**/*.js'	

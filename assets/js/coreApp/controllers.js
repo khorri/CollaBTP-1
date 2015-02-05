@@ -87,7 +87,7 @@ app.controller('homeCtrl', ['$scope', '$compile', 'navService', 'DTOptionsBuilde
 	$scope.model = {};
 	$scope.projectToDel ={};
 
-	$scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(10);
+	$scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(10).withOption('responsive', true);
 
 	$scope.dtColumnDefs = [
 		DTColumnDefBuilder.newColumnDef(0),
