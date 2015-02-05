@@ -659,6 +659,7 @@ small{
 	min-height: 88%;
 	-webkit-transition-duration: .3s; /* Safari */
 	transition-duration: .3s;
+    box-shadow: -5px 0 3px -6px #181818;
 }
 
 .friend-list li a {
@@ -1025,6 +1026,12 @@ div.dataTables_filter input {
 
 .btn-breadcrumb{
 	margin-left: 20px;
+}
+
+thead tr{
+    background-color: #5B3777;
+    color: #fff
+    
 }
 
 /* ANNIMATON STYLING*/
