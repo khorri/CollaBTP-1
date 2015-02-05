@@ -1016,10 +1016,11 @@ small{
 
 
 div.dataTables_filter input {
-	width: 16em;
-	border: 1px solid #ddd;
-	padding: 5px;
-	border-radius: 3px
+    width: 16em;
+    border: 1px solid #B8B8B8;
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 0 0 2px #E4E4E4;
 }
 
 .btn-breadcrumb{
