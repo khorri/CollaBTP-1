@@ -32,7 +32,7 @@
 							<td>{{ project.budget }}</td>
 							<td>
 								<span ng-if="project.ends" am-time-ago="project.ends"></span>
-								<span ng-if="!project.ends">Non difini</span>
+								<span class="label label-success" ng-if="!project.ends">Non defini</span>
 							</td>
 							<th>
 								<a href="#/project/{{project.id}}" class="show-btn btn btn-default">

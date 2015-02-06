@@ -10,9 +10,9 @@ app.config(['$routeProvider', '$locationProvider',
 			}]
 		}
       }).
-		when('/clients', {
+		when('/customers', {
 			templateUrl: 'js/coreApp/partials/clients.html',
-			controller: 'clientsCtrl',
+			controller: 'customerCtrl',
 			resolve: {
 				navPromise: ['navService', function(navService){
 					navService.page = 'Clients';

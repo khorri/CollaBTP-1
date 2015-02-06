@@ -73,7 +73,7 @@ app.factory('projectService', ['$http', function($http){
 	};
 
 	o.getSingle = function(projectID) {
-		return $http.post('', {id:projectID}).success(function(data){
+		return $http.post('/project/getbyid', {id:projectID}).success(function(data){
 			angular.copy(data, o.single);
 		}).error(function (data, status, headers, config) {
 			console.log(status)
@@ -143,4 +143,20 @@ app.factory('messageService', ['$http', '$sails', function($http, $sails){
         })};
 
     return o;
+}]);
+
+
+app.factory('customerService', ['$http', function($http){
+    	var o = {
+			customers: [],
+			single:{}
+	   };
+    
+        o.getAll = function(callback) {
+            return $http.get('/customer/getAll').success(function(data){
+                angular.copy(data, o.customers);
+                callback();
+            }).error(function (data, status, headers, config) {
+                console.log(status)
+            })};
 }]);

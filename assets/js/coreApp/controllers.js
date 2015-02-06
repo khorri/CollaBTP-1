@@ -206,3 +206,22 @@ app.controller('projectCtrl', ['$scope', 'navService', '$sails', 'userService', 
 	
 
 }]);
+
+app.controller('customerCtrl', ['$scope', '$resource', 'navService', 'DTOptionsBuilder', 'DTColumnDefBuilder', '$sails', 'userService', 'customerService', '$routeParams', function($scope, $resource, navService, DTOptionsBuilder, DTColumnDefBuilder, $sails, userService, customerService, $routeParams ){
+    $scope.customers = [];
+    
+    $scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(10);
+
+	$scope.dtColumnDefs = [
+		DTColumnDefBuilder.newColumnDef(0),
+		DTColumnDefBuilder.newColumnDef(1),
+		DTColumnDefBuilder.newColumnDef(2),
+		DTColumnDefBuilder.newColumnDef(3).notSortable(),
+	];
+	
+	$resource('/customer/getAll').query().$promise.then(function(customers) {
+		$scope.customers = customers;
+	});
+    
+	
+}]);
