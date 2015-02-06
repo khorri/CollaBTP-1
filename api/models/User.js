@@ -51,6 +51,11 @@ module.exports = {
 			via: 'contributors',
             dominant: true
       },
+      assignedProjects: {
+           collection: 'Project',
+           via: 'contributors',
+           dominant: true
+      },
 	  settings:{
 			model: 'Settings'
 	  },

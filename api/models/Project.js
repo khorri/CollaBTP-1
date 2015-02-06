@@ -42,6 +42,14 @@ module.exports = {
         owner: {
             model: 'User'
         },
+        projectLeader:{
+            model: 'User',
+            required: true
+        },
+        contributors:{
+            collection: 'User',
+            via: 'assignedProjects'
+        },
         customer: {
             model: 'Customer'
         },
