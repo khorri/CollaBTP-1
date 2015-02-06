@@ -46,6 +46,16 @@ module.exports = {
 			collection: 'Message',
 			via: 'from'
       },
+      activities:{
+			collection: 'Activity',
+			via: 'contributors',
+            dominant: true
+      },
+      assignedProjects: {
+           collection: 'Project',
+           via: 'contributors',
+           dominant: true
+      },
 	  settings:{
 			model: 'Settings'
 	  },
