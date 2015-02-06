@@ -34,7 +34,7 @@
 							<td>{{ project.desc }}</td>
 							<td>
 								<span ng-if="project.ends" am-time-ago="project.ends"></span>
-								<span class="label label-success" ng-if="!project.ends">Non defini</span>
+								<span class="label label-warning" ng-if="!project.ends">Non defini</span>
 							</td>
 							<th>
 								<a href="#/project/{{project.id}}" class="show-btn btn btn-default">
