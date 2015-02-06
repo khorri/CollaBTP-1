@@ -20,7 +20,7 @@ module.exports = {
 		  type: 'string',
 		  email: true,
 		  required: true,
-		  unique: true		  
+		  unique: true
 	  },
       role: {
           model: 'Role',

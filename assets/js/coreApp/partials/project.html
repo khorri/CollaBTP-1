@@ -13,14 +13,18 @@
 						<i class="fa fa-edit"></i> Modifier
 					</button>
 				</div>
-                    <div class="col-md-4"> Créer par: <strong>{{ project.budget }}</strong></div>
-                    <div class="col-md-4"> Budget: <strong>{{ project.budget }}</strong></div>
-                    <div class="col-md-4"> Description: <strong>{{ project.desc }}</strong></div>
-                    <div class="project-progressbar col-md-6">
-                        <small><em>Etat d'avancement</em></small>
-                        <progressbar animate="false" value="dynamic" type="success"><b>{{dynamic}}%</b></progressbar>
-                    </div> 
-                    <table datatable="ng" dt-options="dtOptionsVisitesChantier" dt-column-defs="dtColumnDefs" class="row-border hover table-striped">
+				<div class="col-md-4"> Créer par: <strong>{{ project.budget }}</strong>
+				</div>
+				<div class="col-md-4"> Budget: <strong>{{ project.budget }}</strong>
+				</div>
+				<div class="col-md-4"> Description: <strong>{{ project.desc }}</strong>
+				</div>
+				<div class="project-progressbar col-md-6">
+					<small><em>Etat d'avancement</em></small>
+					<progressbar animate="false" value="dynamic" type="success"><b>{{dynamic}}%</b>
+					</progressbar>
+				</div>
+				<table datatable="ng" dt-options="dtOptionsVisitesChantier" dt-column-defs="dtColumnDefs" class="row-border hover table-striped">
 					<thead>
 						<tr>
 							<th>Actions</th>
@@ -113,45 +117,52 @@
 		<div class="box border no-top">
 			<div class="box-body">
 				<h1>Examination de document</h1>
-				<button ng-click="openAddDialog()" class="btn btn btn-primary">
-					<i class="fa fa-plus"></i> Ajouter un document
-				</button>
-				<button ng-click="refreshData()" class="btn btn btn-default">
-					<i class="fa fa-refresh"></i> Recharger les données
-				</button>
-				<button ng-click="" class="btn btn btn-default">
-					<i class="fa fa-print"></i> Imprimer
-				</button>
-				<button ng-click="" class="btn btn btn-default">
-					<i class="fa fa-paper-plane"></i> Envoyer
-				</button>
-				<button ng-click="" class="btn btn btn-danger">
-					<i class="fa fa-times"></i> Supprimer la selection
-				</button>
-
-				<table datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefsED" class="row-border hover table-striped">
-					<thead>
-						<tr>
-							<th>Label</th>
-							<th>Description</th>
-							<th></th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr ng-repeat="doc in project.docExaminations track by $index">
-							<td>{{ doc.label }}</td>
-							<td>{{ doc.desc }}</td>
-							<th>
-								<a href="#/project/{{project.id}}" class="show-btn btn btn-default">
-									<i class="fa fa-eye"></i>
-								</a>
-								<button class="show-btn btn btn-danger">
-									<i class="fa fa-trash"></i>
-								</button>
-							</th>
-						</tr>
-					</tbody>
-				</table>
+				<div class="col-md-6">
+					<button ng-click="openAddDocExaminationDialog()" class="btn btn btn-primary">
+						<i class="fa fa-plus"></i> Ajouter
+					</button>
+					<button ng-click="refreshData()" class="btn btn btn-default">
+						<i class="fa fa-refresh"></i> Recharger les données
+					</button>
+					<button ng-click="" class="btn btn btn-danger" disabled>
+						<i class="fa fa-times"></i> Supprimer la selection
+					</button>
+					<table datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefsED" class="row-border hover table-striped">
+						<thead>
+							<tr>
+								<th>Label</th>
+								<th>Description</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="doc in project.docExaminations track by $index">
+								<td>{{ doc.label }}</td>
+								<td>{{ doc.desc }}</td>
+								<th>
+									<a href="#/project/{{project.id}}" class="show-btn btn btn-default">
+										<i class="fa fa-eye"></i>
+									</a>
+									<button class="show-btn btn btn-danger">
+										<i class="fa fa-trash"></i>
+									</button>
+								</th>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col-md-6">
+					<button ng-click="" class="btn btn btn-default btn-right">
+						<i class="fa fa-print"></i> Imprimer
+					</button>
+					<button ng-click="" class="btn btn btn-default btn-right">
+						<i class="fa fa-paper-plane"></i> Envoyer
+					</button>
+					<div id="doc-examination">
+						
+						
+					</div>
+				</div>
 			</div>
 		</div>
 	</tab>
@@ -217,61 +228,23 @@
 
 <!-- DOCEXAMINATION MODALS -->
 
-<script type="text/ng-template" id="addDocExaminationModal">
+<script type="text/ng-template" id="addDocExaminationModal"> 
 	<form class="col-md-12">
-		<div class="col-md-6">
-			<div class="form-group">
-				<label>Référence</label>
-				<input type="text" ng-model="project.ref" class="form-control" placeholder="Insérez une référence">
-			</div>
-			<div class="form-group">
-				<div class="form-group">
-					<label>Client</label>
-					<ui-select ng-model="model.selected">
-						<ui-select-match placeholder="Choisir un client">{{$select.selected.name}}</ui-select-match>
-						<ui-select-choices repeat="person in people | filter: $select.search track by person.name">
-							<div ng-bind-html="person.name | highlight: $select.search"></div>
-							<div ng-bind-html="person.email | highlight: $select.search"></div>
-						</ui-select-choices>
-					</ui-select>
-				</div>
-				<div class="form-group">
-					<label>Collaborateurs</label>
-					<ui-select ng-model="model.selected">
-						<ui-select-match placeholder="Ajoutez des collaborateurs">{{$select.selected.name}}</ui-select-match>
-						<ui-select-choices repeat="person in people | filter: $select.search track by person.name">
-							<div ng-bind-html="person.name | highlight: $select.search"></div>
-							<div ng-bind-html="person.email | highlight: $select.search"></div>
-						</ui-select-choices>
-					</ui-select>
-				</div>
-				<label>Description</label>
-				<textarea class="form-control" ng-model="project.desc" placeholder="Insérez un nom de projet"></textarea>
-			</div>
+		<div class="col-md-12">
+			<h2 class="col-md-6">Nom du projet: </h2> 
+			<h2 class="col-md-6">{{project.name}}</h2>
+		</div>
+		<div class="col-md-12">
+			<h2 class="col-md-6">Reference du projet: </h2> 
+			<h2 class="col-md-6">{{project.ref}}</h2>
 		</div>
 		<div class="col-md-6">
-			<div class="form-group">
-				<label for="exampleInputPassword1">Nom du projet</label>
-				<input type="text" ng-model="project.name" class="form-control" placeholder="Insérez un nom de projet">
-			</div>
-			<div class="form-group">
-				<label>Budget</label>
-				<input type="text" class="form-control" ng-model="project.budget" placeholder="Insérez une référence">
-			</div>
-			<div class="form-group">
-				<label>Participants</label>
-				<ui-select ng-model="model.selected">
-					<ui-select-match placeholder="Ajoutez des participants">{{$select.selected.name}}</ui-select-match>
-					<ui-select-choices repeat="person in people | filter: $select.search track by person.name">
-						<div ng-bind-html="person.name | highlight: $select.search"></div>
-						<div ng-bind-html="person.email | highlight: $select.search"></div>
-					</ui-select-choices>
-				</ui-select>
-			</div>
+		</div>
+		<div class="col-md-6">
 		</div>
 	</form>
 	<div class="col-md-8 modal-btn-container">
-		<button ng-click="createProject()" class="btn btn-primary">Créer le projet</button>
+		<button ng-click="createDocExamination()" class="btn btn-primary">Créer le document</button>
 		<button ng-click="closeModal()" class="btn btn-default">Annuler</button>
 	</div>
 </script>

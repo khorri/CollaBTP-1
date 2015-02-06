@@ -943,6 +943,7 @@ small{
 	border-radius: 0 0 4px 4px;
 	padding: 10px;
 	background-color: #FFFFFF;
+	overflow: auto;
 }
 
 .box.border.no-top {
@@ -1000,12 +1001,10 @@ small{
 }
 
 .modal-btn-container {
-	position: absolute;
-	bottom: 40px;
-	left: 0;
-	right: 0;
-	margin: auto;
+	display: block;
 	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .dataTable{
@@ -1081,6 +1080,32 @@ table.dataTable.dtr-inline.collapsed tbody .dataTables_empty:first-child:before 
 table.dataTable tr.child ul {
 	float: left;
 	margin-left: 100px;
+}
+
+.btn-right{
+	float: right;
+	margin-right: 3px;
+}
+
+.form-btn-container{
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#addProjectForm h2{
+	color: #919191;
+	border-bottom: 1px solid #DDD;
+	padding-bottom: 16px;
+}
+
+.select2-container{
+	width: 100%;
+}
+
+.select2-results .select2-highlighted {
+	background: #D0A4ED;
+	color: #fff;
 }
 
 /* ANNIMATON STYLING*/

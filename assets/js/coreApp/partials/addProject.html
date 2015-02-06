@@ -1,0 +1,90 @@
+<div class="col-md-12">
+	<form id="addProjectForm" name="addProjectForm">
+		<div class="col-md-12">
+			<h2>Details du projet</h2>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>Référence</label>
+					<input type="text" ng-model="project.ref" class="form-control" placeholder="Insérez une référence">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputPassword1">Nom du projet</label>
+					<input type="text" ng-model="project.name" class="form-control" placeholder="Insérez un nom de projet">
+				</div>
+				<div class="form-group">
+					<label>Adresse</label>
+					<textarea class="form-control" ng-model="project.adresse" placeholder="Insérez un nom de projet"></textarea>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>Chef de project</label>
+					<select ui-select2 ng-model="project.projectLeader" name="contributors">
+						<option ng-repeat="item in items">{{item.name}}</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>Collaborateurs</label>
+					<select multiple ui-select2 ng-model="project.contributors" name="contributors">
+						<option ng-repeat="item in items">{{item.name}}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<h2>Client et participants</h2>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>Client</label>
+					<select ui-select2 ng-model="project.projectLeader" name="contributors">
+						<option ng-repeat="item in items">{{item.name}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>Participants</label>
+					<select multiple ui-select2 ng-model="project.projectLeader" name="contributors">
+						<option ng-repeat="item in items">{{item.name}}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12">
+			<h2>Plus d'informations</h2>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>Mission</label>
+					<select ui-select2 ng-model="project.projectLeader" name="contributors">
+						<option ng-repeat="item in items">{{item.name}}</option>
+					</select>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>Budget</label>
+					<div class="form-group">
+						<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+						<div class="input-group">
+							<div class="input-group-addon">MAD</div>
+							<input type="text" class="form-control" ng-model="project.budget" placeholder="Insérer le budget">
+							<div class="input-group-addon">.00</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					<label>Payment</label>
+					<select multiple ui-select2 ng-model="project.paymentMethods" name="contributors">
+						<option ng-repeat="method in paymentMethods">{{method.percentage}} - {{method.content}}</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</form>
+	<div class="col-md-12 form-btn-container">
+		<button ng-click="createProject()" class="btn btn-lg btn-primary">Créer le projet</button>
+		<button ng-click="closeModal()" class="btn btn-lg btn-default">Annuler</button>
+	</div>
+</div>
