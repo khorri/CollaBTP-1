@@ -26,6 +26,16 @@ module.exports = {
 		});
 	},
 	
+	getById: function(req, res){
+		Project.find({'id':req.param('id')}).populateAll().exec(function(err, result){
+			if (err){
+				res.send(500, {error: err});
+			}else{
+				res.json(result[0]);
+			}
+		});
+	},
+	
 	remove: function(req, res){
 		Project.update({id:req.param('projectID')}, {'isDeleted': true}).exec(function(err, result){
 			if (err){

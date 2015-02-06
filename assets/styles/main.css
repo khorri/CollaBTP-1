@@ -99,11 +99,11 @@ body{
 }
 
 .navbar-default .navbar-nav>li>a {
-    color: #fff;
+    color: #d3a7f0;
 }
 
 .navbar-default .navbar-nav>li>a:hover {
-	color: #d5acf1;
+	color: #fff;
 }
 
 .navbar-default .navbar-nav>li>a:focus {
@@ -267,7 +267,7 @@ body{
 
 
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
-    color: #d3a7f0;
+    color: #fff;
     background-color: transparent;
 }
 
@@ -1044,6 +1044,43 @@ thead tr{
     color: #959396;
     padding-bottom: 15px;
     font-size: 26px;
+}
+
+table {
+    border: 1px solid #5B3777;
+}
+
+.actions-btn  {
+	position: absolute;
+	top: 70px;
+	right: 35px;
+}
+
+table.dataTable.dtr-inline.collapsed tbody td:first-child:before, table.dataTable.dtr-inline.collapsed tbody th:first-child:before {
+	top: 15px;
+	left: 15px;
+	height: 16px;
+	width: 16px;
+	display: block;
+	position: absolute;
+	color: white;
+	border: 2px solid white;
+	border-radius: 16px;
+	text-align: center;
+	line-height: 16px;
+	box-shadow: 0 0 3px #444;
+	box-sizing: content-box;
+	content: 'v';
+	background-color: #5B3777;
+}
+
+table.dataTable.dtr-inline.collapsed tbody .dataTables_empty:first-child:before {
+	display: none;
+}
+
+table.dataTable tr.child ul {
+	float: left;
+	margin-left: 100px;
 }
 
 /* ANNIMATON STYLING*/

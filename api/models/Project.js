@@ -17,7 +17,7 @@ module.exports = {
       type: 'string',
       required: true
     },
-    description: {
+    desc: {
       type: 'text'
     },
     status: {
@@ -53,7 +53,11 @@ module.exports = {
 	isDeleted: {
 		type:'boolean',
 		defaultsTo: false
-	}
+	},
+	docExaminations:{
+		collection: 'DocExamination',
+		via: 'project'
+	}  
   }
 };
 
