@@ -18,7 +18,10 @@ module.exports = {
     path: {
         type: 'string',
         required: true
-    },  
+    },
+    activity: {
+        model: 'Activity',  
+    },
     isDeleted: {
         type: 'boolean',
         defaultsTo: false
