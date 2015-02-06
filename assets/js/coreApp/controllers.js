@@ -213,6 +213,7 @@ app.controller('projectCtrl', ['$scope', 'navService', '$sails', 'userService', 
 
 	projectService.getSingle($routeParams.id);
 	$scope.project = projectService.single;
+    $scope.dynamic= 69;
 	
 	$scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(10);
 	
