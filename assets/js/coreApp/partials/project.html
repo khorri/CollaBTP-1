@@ -13,6 +13,41 @@
 						<i class="fa fa-edit"></i> Modifier
 					</button>
 				</div>
+                    <div class="col-md-4"> Créer par: <strong>{{ project.budget }}</strong></div>
+                    <div class="col-md-4"> Budget: <strong>{{ project.budget }}</strong></div>
+                    <div class="col-md-4"> Description: <strong>{{ project.desc }}</strong></div>
+                    <div class="project-progressbar col-md-6">
+                        <small><em>Etat d'avancement</em></small>
+                        <progressbar animate="false" value="dynamic" type="success"><b>{{dynamic}}%</b></progressbar>
+                    </div> 
+                    <table datatable="ng" dt-options="dtOptionsVisitesChantier" dt-column-defs="dtColumnDefs" class="row-border hover table-striped">
+					<thead>
+						<tr>
+							<th>Actions</th>
+							<th>User</th>
+							<th>E-mail</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="project in projects track by $index">
+							<td>{{ project.ref }}</td>
+							<td>{{ project.name }}</td>
+							<td>{{ project.budget }}</td>
+							<td>
+								<span ng-if="project.ends" am-time-ago="project.ends"></span>
+								<span ng-if="!project.ends">Non difini</span>
+							</td>
+							<th>
+								<a href="#/project/{{project.id}}" class="show-btn btn btn-default">
+									<i class="fa fa-eye"></i>
+								</a>
+								<button class="show-btn btn btn-danger">
+									<i class="fa fa-trash"></i>
+								</button>
+							</th>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</tab>
