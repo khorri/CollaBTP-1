@@ -58,13 +58,13 @@ module.exports.connections = {
   ***************************************************************************/
 
 
-/*	 mongodev: {
+	 mongodev: {
 		adapter: 'sails-mongo',
 		host: 'localhost',
 		port: 27017,
 		database: 'cadroctet_pm_db',
 		schema: true
-},*/
+},
 
 //	mongoprod: {
 //		adapter: 'sails-mongo',
