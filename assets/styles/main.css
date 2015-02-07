@@ -262,7 +262,7 @@ body{
 	position: fixed;
     border-radius: 0;
 	margin-bottom: 0;
-	z-index: 2;
+	z-index: 50000;
 }
 
 
@@ -568,7 +568,7 @@ small{
 	background: #fff;
 	border-bottom: 1px solid #cecece;
 	border-top: 1px solid #cecece;
-	z-index: 1;
+	z-index: 50000;
     margin-left: 0;
 }
 
@@ -661,6 +661,7 @@ small{
 	-webkit-transition-duration: .3s; /* Safari */
 	transition-duration: .3s;
     box-shadow: -5px 0 3px -6px #181818;
+	z-index: 50000:
 }
 
 .friend-list li a {
@@ -940,7 +941,7 @@ small{
 }
 
 .box.border .box-body, .box.solid .box-body {
-	border-radius: 0 0 4px 4px;
+	border-radius: 3px;
 	padding: 10px;
 	background-color: #FFFFFF;
 	overflow: auto;
@@ -1088,13 +1089,14 @@ table.dataTable tr.child ul {
 }
 
 .form-btn-container{
-	margin-top: 20px;
-	margin-bottom: 20px;
-	text-align: center;
+	text-align: right;
+	position: absolute;
+	top: 10px;
+	right: 10px;
 }
 
-#addProjectForm h2{
-	color: #919191;
+.add-project-container h2{
+	color: #5b3777;
 	border-bottom: 1px solid #DDD;
 	padding-bottom: 16px;
 }
@@ -1104,9 +1106,26 @@ table.dataTable tr.child ul {
 }
 
 .select2-results .select2-highlighted {
-	background: #D0A4ED;
+	background: #5b3777;
 	color: #fff;
 }
+
+.add-project-container{
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	margin-bottom: 30px;
+}
+
+.add-project-container label{
+	color: #7C7C7C;
+}
+
+
+.add-project-container .col-md-12:last-child{
+	margin-bottom: 20px;
+}
+
 
 /* ANNIMATON STYLING*/
 

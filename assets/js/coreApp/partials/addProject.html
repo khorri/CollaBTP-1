@@ -1,7 +1,7 @@
-<div class="col-md-12">
+<div class="col-md-12 add-project-container">
 	<form id="addProjectForm" name="addProjectForm">
-		<div class="col-md-12">
-			<h2>Details du projet</h2>
+		<div class="col-md-12 ">
+			<h2><i class="fa fa-angle-right"></i> Details du projet</h2>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Référence</label>
@@ -32,26 +32,34 @@
 			</div>
 		</div>
 		<div class="col-md-12">
-			<h2>Client et participants</h2>
+			<h2><i class="fa fa-angle-right"></i> Client et participants</h2>
 			<div class="col-md-6">
-				<div class="form-group">
+				<div class="form-group col-md-8">
 					<label>Client</label>
 					<select ui-select2 ng-model="project.projectLeader" name="contributors">
 						<option ng-repeat="item in items">{{item.name}}</option>
 					</select>
 				</div>
+				<div class="form-group col-md-4" style="margin-top: 20px;">
+					<button class="btn btn-primary btn-show col-md-4"><i class="fa fa-plus"></i>
+					</button>
+				</div>
 			</div>
 			<div class="col-md-6">
-				<div class="form-group">
+				<div class="form-group col-md-8">
 					<label>Participants</label>
 					<select multiple ui-select2 ng-model="project.projectLeader" name="contributors">
 						<option ng-repeat="item in items">{{item.name}}</option>
 					</select>
 				</div>
+				<div class="form-group col-md-4" style="margin-top: 24px;">
+					<button class="btn btn-primary btn-show col-md-4"><i class="fa fa-plus"></i>
+					</button>
+				</div>
 			</div>
 		</div>
 		<div class="col-md-12">
-			<h2>Plus d'informations</h2>
+			<h2><i class="fa fa-angle-right"></i> Plus d'informations</h2>
 			<div class="col-md-6">
 				<div class="form-group">
 					<label>Mission</label>
@@ -67,7 +75,7 @@
 						<label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
 						<div class="input-group">
 							<div class="input-group-addon">MAD</div>
-							<input type="text" class="form-control" ng-model="project.budget" placeholder="Insérer le budget">
+							<input type="number" class="form-control" ng-model="project.budget" placeholder="Insérer le budget">
 							<div class="input-group-addon">.00</div>
 						</div>
 					</div>
@@ -84,7 +92,15 @@
 		</div>
 	</form>
 	<div class="col-md-12 form-btn-container">
-		<button ng-click="createProject()" class="btn btn-lg btn-primary">Créer le projet</button>
-		<button ng-click="closeModal()" class="btn btn-lg btn-default">Annuler</button>
+		<div class="btn-group" dropdown>
+			<button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+				Créer le projet <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu">
+				<li><a href="#">Et Generer le contrat/a></li>
+				<li><a href="#">Sans generer le contrat</a></li>
+			</ul>
+		</div>
+		<a href="#/home" class="btn btn-default">Annuler</a>
 	</div>
 </div>
