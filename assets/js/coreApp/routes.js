@@ -19,6 +19,15 @@ app.config(['$routeProvider', '$locationProvider',
 				}]
 			}
 		}).
+        when('/participants', {
+			templateUrl: 'js/coreApp/partials/participants.html',
+			controller: 'participantCtrl',
+			resolve: {
+				navPromise: ['navService', function (navService) {
+					navService.page = 'Participants';
+				}]
+			}
+		}).
 		when('/admin', {
 			templateUrl: 'js/coreApp/partials/admin.html',
 			controller: 'adminCtrl',

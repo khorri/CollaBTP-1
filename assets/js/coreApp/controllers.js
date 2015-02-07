@@ -284,3 +284,22 @@ app.controller('customerCtrl', ['$scope', '$resource', 'navService', 'DTOptionsB
 
 
 }]);
+
+app.controller('participantCtrl', ['$scope', '$resource', 'navService', 'DTOptionsBuilder', 'DTColumnDefBuilder', '$sails', 'userService', 'participantService', '$routeParams', function ($scope, $resource, navService, DTOptionsBuilder, DTColumnDefBuilder, $sails, userService, participantService, $routeParams) {
+	$scope.participants = [];
+
+	$scope.dtOptions = DTOptionsBuilder.newOptions().withPaginationType('full_numbers').withDisplayLength(10);
+
+	$scope.dtColumnDefs = [
+		DTColumnDefBuilder.newColumnDef(0),
+		DTColumnDefBuilder.newColumnDef(1),
+		DTColumnDefBuilder.newColumnDef(2),
+		DTColumnDefBuilder.newColumnDef(3).notSortable(),
+	];
+
+	$resource('/participant/getAll').query().$promise.then(function (participants) {
+		$scope.participants = participants;
+	});
+
+
+}]);
