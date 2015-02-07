@@ -1,0 +1,50 @@
+<tabset> 
+    <tab> 
+        <tab-heading> 
+            <i class="fa fa-briefcase"></i> Participants 
+        </tab-heading>
+	<div class="box border no-top">
+		<div class="box-body">
+			<button ng-click="openAddDialog()" class="btn btn btn-primary">
+				<i class="fa fa-plus"></i> Ajouter
+			</button>
+			<button ng-click="refreshData()" class="btn btn btn-default">
+				<i class="fa fa-refresh"></i> Recharger les données
+			</button>
+			<div id="DataTables_Table_0_wrapper" class="dataTables_wrapper form-inline no-footer">
+				<!-- Customers DATATABLE -->
+				<table ng-cloak datatable="ng" dt-options="dtOptions" dt-column-defs="dtColumnDefs" class="row-border hover table-striped">
+					<thead>
+						<tr>
+							<th>Contact</th>
+							<th>Société</th>
+							<th>email</th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="participant in participants track by $index">
+							<td>{{ participant.contactPerson }}</td>
+							<td>{{ participant.company }}</td>
+							<td>{{ participant.email }}</td>
+							
+							<th>
+								<a href="#/participant/{{participant.id}}" class="show-btn btn btn-default">
+									<i class="fa fa-eye"></i>
+								</a>
+								<button ng-click="" class="show-btn btn btn-danger">
+									<i class="fa fa-trash"></i>
+								</button>		
+							</th>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	</tab> 
+</tabset>
+
+
+
+

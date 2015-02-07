@@ -160,3 +160,18 @@ app.factory('customerService', ['$http', function($http){
                 console.log(status)
             })};
 }]);
+app.factory('participantService', ['$http', function($http){
+    	var o = {
+			participants: [],
+			single:{}
+	   };
+    
+        o.getAll = function(callback) {
+            return $http.get('/participant/getAll').success(function(data){
+                angular.copy(data, o.participants);
+                callback();
+            }).error(function (data, status, headers, config) {
+                console.log(status)
+            })};
+}]);
+
