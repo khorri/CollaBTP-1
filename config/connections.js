@@ -60,19 +60,19 @@ module.exports.connections = {
 
 
 
-	mongodev: {
+/*	mongodev: {
 		adapter: 'sails-mongo',
 		host: 'localhost',
 		port: 27017,
 		database: 'cadroctet_pm_db',
 		schema: true
-	 }, 
+	 }, */
 	 
-/*	mongoprod: {
+	mongoprod: {
 		adapter: 'sails-mongo',
 		url: 'mongodb://cadroctet:final118008@ds063630.mongolab.com:63630/cadroctet_pm_db',
 		schema: true ,
-  }, */
+  }, 
 	
 	
   /***************************************************************************
