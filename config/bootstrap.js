@@ -10,6 +10,13 @@
  */
 
 module.exports.bootstrap = function(cb) {
+	
+	User.create({'name':'Test User', 'email':'test.user@gmail.com', 'password':'12345', 'confirmation':'12345'}, function userCreated(err, user){
+		if(err){
+			console.log(err);
+		}
+		
+	});
 
   	User.update({},{
 		online: false

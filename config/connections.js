@@ -28,9 +28,9 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
-/*  localDiskDb: {
+  localDiskDb: {
     adapter: 'sails-disk'
-  }, */
+  }, 
 
   /***************************************************************************
   *                                                                          *
@@ -59,7 +59,7 @@ module.exports.connections = {
 
 
 
-/*
+
 	mongodev: {
 		adapter: 'sails-mongo',
 		host: 'localhost',
@@ -67,12 +67,12 @@ module.exports.connections = {
 		database: 'cadroctet_pm_db',
 		schema: true
 	 },
-*/
-	mongoprod: {
-		adapter: 'sails-mongo',
-		url: 'mongodb://cadroctet:final118008@ds063630.mongolab.com:63630/cadroctet_pm_db',
-		schema: true ,
-  },
+
+//	mongoprod: {
+//		adapter: 'sails-mongo',
+//		url: 'mongodb://cadroctet:final118008@ds063630.mongolab.com:63630/cadroctet_pm_db',
+//		schema: true ,
+//  },
   /***************************************************************************
   *                                                                          *
   * PostgreSQL is another officially supported relational database.          *

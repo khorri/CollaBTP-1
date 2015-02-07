@@ -262,7 +262,7 @@ body{
 	position: fixed;
     border-radius: 0;
 	margin-bottom: 0;
-	z-index: 50000;
+	z-index: 50001;
 }
 
 
@@ -1124,6 +1124,10 @@ table.dataTable tr.child ul {
 
 .add-project-container .col-md-12:last-child{
 	margin-bottom: 20px;
+}
+
+html > body > .ui-pnotify {
+	z-index: 5000000;
 }
 
 
