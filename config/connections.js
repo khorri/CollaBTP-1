@@ -59,10 +59,7 @@ module.exports.connections = {
 
 
 
-<<<<<<< HEAD
-=======
 /*
->>>>>>> 8d3f486148b945f79577cf63c17a967a76c7daa0
 	mongodev: {
 		adapter: 'sails-mongo',
 		host: 'localhost',
@@ -70,22 +67,12 @@ module.exports.connections = {
 		database: 'cadroctet_pm_db',
 		schema: true
 	 },
-<<<<<<< HEAD
-
-/*	mongoprod: {
-		adapter: 'sails-mongo',
-		url: 'mongodb://cadroctet:final118008@ds063630.mongolab.com:63630/cadroctet_pm_db',
-		schema: true ,
-  },*/
-
-=======
 */
 	mongoprod: {
 		adapter: 'sails-mongo',
 		url: 'mongodb://cadroctet:final118008@ds063630.mongolab.com:63630/cadroctet_pm_db',
 		schema: true ,
   },
->>>>>>> 8d3f486148b945f79577cf63c17a967a76c7daa0
   /***************************************************************************
   *                                                                          *
   * PostgreSQL is another officially supported relational database.          *
