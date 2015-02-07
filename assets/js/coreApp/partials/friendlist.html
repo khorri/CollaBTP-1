@@ -1,4 +1,4 @@
-<li class="user-element" ng-repeat="user in users | omit:isLogged" ng-click="friendClicked(user)">
+<li ng-if="users.length > 1" class="user-element" ng-repeat="user in users | omit:isLogged" ng-click="friendClicked(user)">
 	<a>
 		<img class="img-circle" src="images/no-img.png" alt="User Pic">
 		<span class="body">
@@ -14,3 +14,6 @@
 
 	</a>
 </li>
+<div class="friend-list-err" ng-if="users.length <= 1">
+	<h1>Aucun utilisateur à afficher</h1>
+</div>

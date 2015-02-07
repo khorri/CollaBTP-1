@@ -1130,6 +1130,33 @@ html > body > .ui-pnotify {
 	z-index: 5000000;
 }
 
+.friend-list-err h1{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	height: 200px;
+	color: rgba(216, 216, 216, 0.8);
+	text-shadow: 1px 0px 6px, 0 0 0 #000, 1px 4px 6px rgba(255, 255, 255, 0);
+	font-weight: bold;
+	font-size: 3em;
+	line-height: 1em;
+	text-align: center;
+}
+
+.add-project-acc .panel-heading{
+	display: none;
+}
+
+.add-project-acc .panel{
+	border: none;
+}
+
+.add-project-acc .panel-default>.panel-heading+.panel-collapse>.panel-body {
+	border: 1px solid #ddd;
+	background: #F5F5F5;
+	border-radius: 3px;
+}
 
 /* ANNIMATON STYLING*/
 

@@ -41,9 +41,14 @@
 					</select>
 				</div>
 				<div class="form-group col-md-4" style="margin-top: 20px;">
-					<button class="btn btn-primary btn-show col-md-4"><i class="fa fa-plus"></i>
+					<button ng-click="newCustomerOpen = !newCustomerOpen" class="btn btn-default btn-show col-md-4"><i class="fa fa-plus"></i>
 					</button>
 				</div>
+				<accordion class="add-project-acc form-group col-md-12">
+					<accordion-group is-open="newCustomerOpen">
+						This is just some content to illustrate fancy headings.
+					</accordion-group>
+				</accordion>
 			</div>
 			<div class="col-md-6">
 				<div class="form-group col-md-8">
@@ -53,9 +58,14 @@
 					</select>
 				</div>
 				<div class="form-group col-md-4" style="margin-top: 24px;">
-					<button class="btn btn-primary btn-show col-md-4"><i class="fa fa-plus"></i>
+					<button ng-click="newParticipantOpen = !newParticipantOpen" class="btn btn-default btn-show col-md-4"><i class="fa" ng-class="{'fa-plus': !newParticipantOpen, 'fa-minus': newParticipantOpen}"></i>
 					</button>
 				</div>
+				<accordion class="add-project-acc form-group col-md-12">
+					<accordion-group is-open="newParticipantOpen">
+						This is just some content to illustrate fancy headings.
+					</accordion-group>
+				</accordion>
 			</div>
 		</div>
 		<div class="col-md-12">
@@ -92,15 +102,9 @@
 		</div>
 	</form>
 	<div class="col-md-12 form-btn-container">
-		<div class="btn-group" dropdown>
-			<button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle ng-disabled="disabled">
-				Créer le projet <span class="caret"></span>
-			</button>
-			<ul class="dropdown-menu" role="menu">
-				<li><a href="#">Et Generer le contrat/a></li>
-				<li><a href="#">Sans generer le contrat</a></li>
-			</ul>
-		</div>
+		<button type="button" class="btn btn-primary">
+			Créer le projet
+		</button>
 		<a href="#/home" class="btn btn-default">Annuler</a>
 	</div>
 </div>

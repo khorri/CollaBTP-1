@@ -186,6 +186,9 @@ app.controller('homeCtrl', ['$scope', '$compile', 'navService', 'DTOptionsBuilde
 
 app.controller('addProjectCtrl', ['$scope', 'navService', '$sails', 'projectService', function ($scope, navService, $sails, projectService) {
 	$scope.project = {};
+	$scope.newCustomerOpen = false;
+	
+	
 	$scope.items =  [
 		{ name: 'Adam',      email: 'adam@email.com',      age: 12, country: 'United States' },
 		{ name: 'Amalie',    email: 'amalie@email.com',    age: 12, country: 'Argentina' },
@@ -204,6 +207,7 @@ app.controller('addProjectCtrl', ['$scope', 'navService', '$sails', 'projectServ
 		{ content: 'Examination du document',    percentage: '20%'},
 		{ content: 'Aprés la premiere visite', percentage: '70%' }
 	];
+	
 
 }]);
 
