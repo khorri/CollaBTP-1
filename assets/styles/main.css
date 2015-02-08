@@ -269,6 +269,7 @@ body{
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
     color: #fff;
     background-color: transparent;
+	font-weight: bold;
 }
 
 .panel-primary>.panel-heading {
@@ -734,6 +735,25 @@ small{
 	padding: 5px 10px;
 }
 
+.friend-list-err{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	height: 350px;
+}
+
+.friend-list-err h2{
+	color: rgba(216, 216, 216, 0.8);
+	text-shadow: 1px 0px 6px, 0 0 0 #000, 1px 4px 6px rgba(255, 255, 255, 0);
+	font-weight: bold;
+	font-size: 3em;
+	line-height: 1em;
+	text-align: center;
+}
+
 
 .principal{
 	width: 100%;
@@ -1030,7 +1050,12 @@ div.dataTables_filter input {
 }
 
 thead tr{
-    background-color: #5B3777;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5b3777), color-stop(100%, #7B5598 ));
+	background: -webkit-linear-gradient(top, #5b3777, #7B5598 );
+	background: -moz-linear-gradient(top, #5b3777, #7B5598 );
+	background: -ms-linear-gradient(top, #5b3777, #7B5598 );
+	background: -o-linear-gradient(top, #5b3777, #7B5598 );
+	background: linear-gradient(to bottom, #5b3777, #7B5598 );
     color: #fff  
 }
 
@@ -1046,8 +1071,8 @@ thead tr{
     font-size: 26px;
 }
 
-table {
-    border: 1px solid #5B3777;
+table.dataTable.no-footer {
+    border-bottom: 1px solid #ddd;
 }
 
 .actions-btn  {
@@ -1070,7 +1095,7 @@ table.dataTable.dtr-inline.collapsed tbody td:first-child:before, table.dataTabl
 	line-height: 16px;
 	box-shadow: 0 0 3px #444;
 	box-sizing: content-box;
-	content: 'v';
+	content: '+';
 	background-color: #5B3777;
 }
 
@@ -1130,19 +1155,8 @@ html > body > .ui-pnotify {
 	z-index: 5000000;
 }
 
-.friend-list-err h1{
-	position: absolute;
-	top: 0;
-	bottom: 0;
-	margin: auto;
-	height: 200px;
-	color: rgba(216, 216, 216, 0.8);
-	text-shadow: 1px 0px 6px, 0 0 0 #000, 1px 4px 6px rgba(255, 255, 255, 0);
-	font-weight: bold;
-	font-size: 3em;
-	line-height: 1em;
-	text-align: center;
-}
+
+
 
 .add-project-acc .panel-heading{
 	display: none;
@@ -1156,6 +1170,24 @@ html > body > .ui-pnotify {
 	border: 1px solid #ddd;
 	background: #F5F5F5;
 	border-radius: 3px;
+}
+
+.input-group .form-control{
+	z-index: 0;
+}
+
+.pre-label{
+	color: #999;
+}
+
+.jumbotron {
+	padding: 0;
+	margin-bottom: 30px;
+	color: inherit;
+	background-color: #F8F8F8;
+	text-align: center;
+	border: 1px solid #ddd;
+	text-align: left;
 }
 
 /* ANNIMATON STYLING*/

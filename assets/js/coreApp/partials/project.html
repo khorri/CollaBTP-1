@@ -159,8 +159,8 @@
 						<i class="fa fa-paper-plane"></i> Envoyer
 					</button>
 					<div id="doc-examination">
-						
-						
+
+
 					</div>
 				</div>
 			</div>
@@ -172,6 +172,165 @@
 		<div class="box border no-top">
 			<div class="box-body">
 				<h1>Fiche descriptive</h1>
+				<div class="col-md-12">
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="pre-label">Référence du projet:</label>
+							<label>{{project.ref}}</label>
+						</div>
+						<div class="form-group">
+							<label class="pre-label">Nom du projet:</label>
+							<label>{{project.name}}</label>
+						</div>
+						<div class="form-group">
+							<label class="pre-label">Chef de projet:</label>
+							<label>Khalid Horri</label>
+						</div>
+						<div class="form-group">
+							<label class="pre-label">Participants au projet</label>
+							<select multiple ui-select2 ng-model="contributors">
+								<option value="1">Participant1</option>
+								<option value="2">Participant2</option>
+								<option value="3">Participant3</option>
+								<option value="4">Participant4</option>
+								<option value="5">Participant5</option>
+								<option value="6">Participant6</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="pre-label">Evaluation du risque</label>
+							<select ui-select2 ng-model="riskEval">
+								<option value="1">normal</option>
+								<option value="2">medium</option>
+								<option value="3">max</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1">Ouvrage examiné</span>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon" id="basic-addon1">Sondages examiné</span>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="jumbotron">
+							<h4>Anciennes versions</h4>
+							<a href="#">12/12/2014 modifié par Khalid Horri</a>
+							<br>
+							<a href="#">23/11/2014 modifié par Khalid Horri</a>
+							<br>
+							<a href="#">17/9/2014 modifié par Khalid Horri</a>
+							<br>
+							<a href="#">10/9/2014 modifié par Khalid Horri</a>
+						</div>
+						<div class="form-group">
+							<label class="pre-label">Observations:</label>
+							<textarea class="form-control" ng-model="project.adresse">Quelques observation à propos...</textarea>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<h3>Sol</h3>
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">Invistigation geotechnique</span>
+								<input type="checkbox" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">Stresse du sol</span>
+								<input type="number" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">Text value 1</span>
+								<input type="number" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">Text value 2</span>
+								<input type="number" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<h3>Type de bâtiment</h3>
+					<div class="col-md-6">
+						<div class="form-group">
+							<label class="pre-label">Type d'habitation</label>
+							<select ui-select2 ng-model="buildingType">
+								<option value="1">Maison</option>
+								<option value="2">Administration</option>
+								<option value="3">Appartement</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label class="pre-label">Charges permanentes</label>
+							<div class="input-group">
+								<input type="text" class="form-control">
+								<span class="input-group-addon">Kg/m<sup>2</sup></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="pre-label">Charges d'exploitation</label>
+							<div class="input-group">
+								<input type="text" class="form-control">
+								<span class="input-group-addon">Kg/m<sup>2</sup></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<h3>Structure</h3>
+					<div class="col-md-12"></div>
+					<div class="col-md-12"></div>
+				</div>
+				<div class="col-md-12">
+					<h3>Sismique</h3>
+					<div class="col-md-6">
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">Site</span>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">Coefficient du comportement</span>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">Coefficient du Dynamique</span>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">Type de contreventement</span>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="input-group">
+								<span class="input-group-addon">Classe du batiment</span>
+								<input type="text" class="form-control">
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</tab>
@@ -228,14 +387,14 @@
 
 <!-- DOCEXAMINATION MODALS -->
 
-<script type="text/ng-template" id="addDocExaminationModal"> 
+<script type="text/ng-template" id="addDocExaminationModal">
 	<form class="col-md-12">
 		<div class="col-md-12">
-			<h2 class="col-md-6">Nom du projet: </h2> 
+			<h2 class="col-md-6">Nom du projet: </h2>
 			<h2 class="col-md-6">{{project.name}}</h2>
 		</div>
 		<div class="col-md-12">
-			<h2 class="col-md-6">Reference du projet: </h2> 
+			<h2 class="col-md-6">Reference du projet: </h2>
 			<h2 class="col-md-6">{{project.ref}}</h2>
 		</div>
 		<div class="col-md-6">
